@@ -5,11 +5,6 @@ GSImage provides generell image functions via various drivers for php.
 
 It supports the following drivers:
 * GD
-<!--
-* Imagick
-* convert (via exec)
-* PHP native
--->
 
 Requirements
 ------------

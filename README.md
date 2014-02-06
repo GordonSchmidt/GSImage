@@ -1,7 +1,7 @@
 GSImage - Image handling for PHP
 ================================
 
-[![Build Status](https://travis-ci.org/GordonSchmidt/GSImage.png)](https://travis-ci.org/GordonSchmidt/GSImage)
+[![Build Status](https://travis-ci.org/GordonSchmidt/GSImage.png?branch=master)](https://travis-ci.org/GordonSchmidt/GSImage)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GordonSchmidt/GSImage/badges/quality-score.png?s=74c7ff3b22080fc92cf676c0373b55e47715c170)](https://scrutinizer-ci.com/g/GordonSchmidt/GSImage/)
 [![Code Coverage](https://scrutinizer-ci.com/g/GordonSchmidt/GSImage/badges/coverage.png?s=7f34f594591d17262df09404bd1153c9fd3e1062)](https://scrutinizer-ci.com/g/GordonSchmidt/GSImage/)
 [![Latest Stable Version](https://poser.pugx.org/gs/image/v/stable.png)](https://packagist.org/packages/gs/image)

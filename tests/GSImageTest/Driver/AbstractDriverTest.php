@@ -125,8 +125,8 @@ class AbstractDriverTest extends \PHPUnit_Framework_TestCase
         $resource = @imagecreatefromstring($string);
         $this->mockSaveToString($string);
         $this->assertEquals(
-            getimagesizefromstring($string),
-            getimagesizefromstring($this->driver->save($resource, array('format' => IMAGETYPE_PNG)))
+            $this->getImageInfoFromString($string),
+            $this->getImageInfoFromString($this->driver->save($resource, array('format' => IMAGETYPE_PNG)))
         );
     }
 
@@ -228,8 +228,8 @@ class AbstractDriverTest extends \PHPUnit_Framework_TestCase
     {
         $this->mockSaveToString($string);
         $this->assertEquals(
-            getimagesizefromstring($string),
-            getimagesizefromstring($this->driver->ensure($image, $formats, $storages))
+            $this->getImageInfoFromString($string),
+            $this->getImageInfoFromString($this->driver->ensure($image, $formats, $storages))
         );
     }
 
@@ -415,5 +415,11 @@ class AbstractDriverTest extends \PHPUnit_Framework_TestCase
             ->expects($this->once())
             ->method('loadFromString')
             ->will($this->returnValue($resource));
+    }
+    
+    protected function getImageInfoFromString($string)
+    {
+        $url = 'data://application/octet-stream;base64,'  . base64_encode($string);
+        return getimagesize($url);
     }
 }

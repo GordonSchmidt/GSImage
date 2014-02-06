@@ -96,8 +96,8 @@ class GdDriverTest extends AbstractDriverTest
     {
         $resource = @imagecreatefromstring($string);
         $this->assertEquals(
-            getimagesizefromstring($string),
-            getimagesizefromstring($this->driver->saveToString($resource, array('format' => IMAGETYPE_PNG)))
+            $this->getImageInfoFromString($string),
+            $this->getImageInfoFromString($this->driver->saveToString($resource, array('format' => IMAGETYPE_PNG)))
         );
     }
 

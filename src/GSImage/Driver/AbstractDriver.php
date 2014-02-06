@@ -57,11 +57,10 @@ abstract class AbstractDriver implements DriverInterface
      */
     public function getInfo($image)
     {
-        $info = getimagesizefromstring($image);
-        if (false == $info) {
-            $info = getimagesize($image);
+        if (DriverInterface::IMAGE_STORAGE_STRING == $this->getImageStorage($image)) {
+            $image = 'data://application/octet-stream;base64,'  . base64_encode($image);
         }
-        return $info;
+        return getimagesize($image);
     }
 
     /**

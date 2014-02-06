@@ -146,8 +146,20 @@ class ImageTest extends \PHPUnit_Framework_TestCase
     public function provideKnownDrivers()
     {
         return array(
-            array(array('\GSImageTest\Driver\InvalidDriver', '\GSImageTest\Driver\NotAvailableDriver', '\GSImageTest\Driver\ValidDriver'), '\GSImageTest\Driver\ValidDriver', 'assertInstanceOf'),
-            array(array('\GSImageTest\Driver\InvalidDriver', '\GSImageTest\Driver\NotAvailableDriver'), null, 'assertSame'),
+            array(
+                array(
+                    '\GSImageTest\Driver\InvalidDriver',
+                    '\GSImageTest\Driver\NotAvailableDriver',
+                    '\GSImageTest\Driver\ValidDriver'
+                ),
+                '\GSImageTest\Driver\ValidDriver',
+                'assertInstanceOf'
+            ),
+            array(
+                array('\GSImageTest\Driver\InvalidDriver', '\GSImageTest\Driver\NotAvailableDriver'),
+                null,
+                'assertSame'
+            ),
         );
     }
 }

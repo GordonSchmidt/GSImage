@@ -275,11 +275,27 @@ class AbstractDriverTest extends \PHPUnit_Framework_TestCase
         return array(
             array(
                 $basePath . '/assets/test.gif',
-                array(0 => 30, 1 => 5, 2 => 1, 3 => 'width="30" height="5"', 'bits' => 1, 'channels' => 3, 'mime' => 'image/gif')
+                array(
+                    0 => 30,
+                    1 => 5,
+                    2 => 1,
+                    3 => 'width="30" height="5"',
+                    'bits' => 1,
+                    'channels' => 3,
+                    'mime' => 'image/gif'
+                )
             ),
             array(
                 $basePath . '/assets/test.jpg',
-                array(0 => 30, 1 => 5, 2 => 2, 3 => 'width="30" height="5"', 'bits' => 8, 'channels' => 3, 'mime' => 'image/jpeg')
+                array(
+                    0 => 30,
+                    1 => 5,
+                    2 => 2,
+                    3 => 'width="30" height="5"',
+                    'bits' => 8,
+                    'channels' => 3,
+                    'mime' => 'image/jpeg'
+                )
             ),
             array(
                 $basePath . '/assets/test.png',
@@ -366,10 +382,11 @@ class AbstractDriverTest extends \PHPUnit_Framework_TestCase
         $gif = file_get_contents(dirname(dirname(__DIR__)) . '/assets/test.gif');
         $jpg = file_get_contents(dirname(dirname(__DIR__)) . '/assets/test.jpg');
         $formats = array(IMAGETYPE_GIF, IMAGETYPE_JPEG);
+        $storages = array(DriverInterface::IMAGE_STORAGE_FILE, DriverInterface::IMAGE_STORAGE_STRING);
         return array(
             array($file, IMAGETYPE_GIF, DriverInterface::IMAGE_STORAGE_STRING, $gif),
             array($file, IMAGETYPE_JPEG, DriverInterface::IMAGE_STORAGE_STRING, $jpg),
-            array($image, $formats, array(DriverInterface::IMAGE_STORAGE_FILE, DriverInterface::IMAGE_STORAGE_STRING), $gif),
+            array($image, $formats, $storages, $gif),
         );
     }
 

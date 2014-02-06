@@ -30,7 +30,7 @@ abstract class AbstractDriver implements DriverInterface
     {
         if (@file_exists('file://' . $image)) {
             return DriverInterface::IMAGE_STORAGE_FILE;
-        } else if (false === strpos($image, '://')) {
+        } elseif (false === strpos($image, '://')) {
             return DriverInterface::IMAGE_STORAGE_STRING;
         } else {
             return DriverInterface::IMAGE_STORAGE_URL;
@@ -103,7 +103,7 @@ abstract class AbstractDriver implements DriverInterface
     {
         if (in_array(DriverInterface::IMAGE_STORAGE_STRING, $storages)) {
             return null;
-        } else if (in_array(DriverInterface::IMAGE_STORAGE_FILE, $storages)) {
+        } elseif (in_array(DriverInterface::IMAGE_STORAGE_FILE, $storages)) {
             return sys_get_temp_dir() . '/tmp-image-' . rand();
         } else {
             throw new Exception\RuntimeException('cannot save to url storage');
@@ -163,10 +163,10 @@ abstract class AbstractDriver implements DriverInterface
     public function saveFromString($image, $options = array())
     {
         if (isset($options['file'])) {
-           if (false === @file_put_contents($options['file'], $image)) {
+            if (false === @file_put_contents($options['file'], $image)) {
                 throw new Exception\RuntimeException('could not save image');
-           }
-           return $options['file'];
+            }
+            return $options['file'];
         }
         return $image;
     }

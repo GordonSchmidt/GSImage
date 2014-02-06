@@ -8,7 +8,7 @@ GSImage - Image handling for PHP
 [![Total Downloads](https://poser.pugx.org/gs/image/downloads.png)](https://packagist.org/packages/gs/image)
 [![License](https://poser.pugx.org/gs/image/license.png)](https://packagist.org/packages/gs/image)
 
-GSImage provides generell image functions via various drivers for php.
+GSImage provides generell image functions with various drivers for php.
 
 It supports the following drivers:
 * GD
